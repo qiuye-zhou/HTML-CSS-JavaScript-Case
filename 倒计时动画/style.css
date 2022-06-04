@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* 引入字体 'Roboto' */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h4 {
+    font-size: 20px;
+    margin: 5px;
+    text-transform: uppercase;
+    color: gainsboro;
+    /* 定义仅有大写字母。 */
+}
+
+h1{
+    color: gainsboro;
+}
+
+.initial {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 垂直居中 */
+    text-align: center;
+}
+
+.hide {
+    transform: translate(-50%, -50%) scale(0);
+    animation: hide 0.2s ease-out;
+    /* 动画以低速结束 */
+}
+
+/* 隐藏时动画：改变大小 缩放 scale() */
+@keyframes hide {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+.final {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    text-align: center;
+}
+
+.show {
+    transform: translate(-50%, -50%) scale(1);
+    animation: show 0.2 ease-out;
+}
+
+/* 显示时动画：改变大小 缩放 scale() */
+@keyframes show {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    30% {
+        transform: translate(-50%, -50%) scale(1.4);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.nums {
+    color: darkgray;
+    font-size: 50px;
+    position: relative;
+    overflow: hidden;
+    width: 250px;
+    height: 50px;
+}
+
+.nums span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(120deg);
+    /* 旋转120deg  到了nums 外面  nums设置overflow：hidden 超出外面部分隐藏 */
+    transform-origin: bottom center;
+    /* 设置旋转元素的基点位置 */
+}
+
+.nums .in {
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: goin 0.5s ease-in-out;
+    /* 规定以慢速开始和结束的过渡效果（等于 cubic-bezier(0.42,0,0.58,1)）。 */
+}
+
+.nums .out {
+    animation: goout 0.5s ease-in-out;
+}
+
+/* 进入显示的状态动画 */
+@keyframes goin {
+    0% {
+        transform: translate(-50%, -50%) rotate(120deg);
+    }
+
+    30% {
+        transform: translate(-50%, -50%) rotate(-20deg);
+    }
+
+    60% {
+        transform: translate(-50%, -50%) rotate(10deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+/* 进入隐藏的状态动画 */
+@keyframes goout {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    60% {
+        transform: translate(-50%, -50%) rotate(20deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(-120deg);
+    }
+}
+
+#replay {
+    background-color: darkgray;
+    border-radius: 3px;
+    border: none;
+    color: aliceblue;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    /* 悬浮小手 */
+    transition: all 0.3;
+    /* 所有过渡效果 0.3s执行完 */
+}
+
+#replay span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+}
+
+#replay span::after {
+    content: '\00bb';
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+#replay:hover span {
+    padding-right: 25px;
+}
+
+#replay:hover span:after {
+    opacity: 1;
+    right: 0;
+}
