@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background-color: rgb(100, 200, 250);
+}
+
+.backg{
+    background: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fyaya-img.diqiu00.com%2Fuploads%2Fimage%2F20211127%2F1637975574594597.jpg&refer=http%3A%2F%2Fyaya-img.diqiu00.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1657013953&t=3d142143c29100fff759edfde3e78d9f')
+    no-repeat center center/cover;
+    /* center/cover 是下面的简写方式 */
+    /* background-position: center;
+    background-size: cover; css3的属性 */
+    /* 不重复居中 居中且平铺 */
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: calc(100vw + 30px);
+    height: calc(100vh + 30px);
+    /* 动态计算 */
+    z-index: -1;
+    filter: blur(0px);
+    /* 模糊 */
+}
+
+.loding{
+    font-size: 50px;
+    color: aliceblue;
+}
