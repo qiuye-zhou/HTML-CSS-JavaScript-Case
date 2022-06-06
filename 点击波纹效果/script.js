@@ -23,7 +23,7 @@ const button = document.querySelector('.ripple');
 
 
 //下面就完美解决了这个问题
-//利用了防抖解决
+//利用了节流解决
 //通过result来判断上一个span是否删除，来决定是否执行
 let result = true;
 button.addEventListener('click', (e) => {
