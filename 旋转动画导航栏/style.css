@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aliceblue;
+    background-image: linear-gradient(to bottom,
+            #eafbff 0%,
+            #eafbff 50%,
+            #5290f9 50%,
+            #5290f9 100%);
+    /* 从上到下渐变 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+nav {
+    background-color: aliceblue;
+    padding: 22px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px black;
+    transition: width 1s linear;
+    /* 宽度过渡动画  动画从头到尾的速度是相同的 */
+    overflow-x: hidden;
+}
+
+nav.active {
+    width: 400px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    /* 消除序号 */
+    padding: 0;
+    margin: 0;
+    width: 0;
+    transition: width 1s linear;
+}
+
+nav.active ul {
+    width: 100%;
+}
+
+nav ul li {
+    transform: rotateY(0deg);
+    opacity: 0;
+    transition: transform 1s linear, opacity 1s linear;
+}
+
+nav.active ul li {
+    opacity: 1;
+    transform: rotateY(360deg);
+}
+
+nav ul a {
+    position: relative;
+    color: #5290f9;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.ico {
+    background-color: aliceblue;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.ico .lin {
+    background-color: #5290f9;
+    height: 1.8px;
+    width: 25px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    transition: transform 1s linear;
+}
+
+.ico .lin2 {
+    top: 20px;
+    bottom: 10px;
+}
+
+nav.active .ico .lin1 {
+    transform: rotate(-765deg) translateY(6.5px);
+}
+
+nav.active .ico .lin2 {
+    transform: rotate(765deg) translateY(-6.5px);
+}
