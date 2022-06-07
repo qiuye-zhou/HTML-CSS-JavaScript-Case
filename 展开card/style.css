@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+}
+
+.img {
+    background: no-repeat center/cover;
+    height: 80vh;
+    border-radius: 50px;
+    color: aliceblue;
+    cursor: pointer;
+    flex: 1;
+    margin: 10px;
+    position: relative;
+    transition: all 0.7s ease-in;
+}
+
+.img h3 {
+    font-size: 26px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+.img.active h3 {
+    opacity: 1;
+    transition: opacity 0.5s ease-in 0.3s;
+}
+
+.img.active {
+    flex: 12;
+}
+
+@media (max-width: 500px) {
+
+    /* 宽度小于500px则隐藏后面的两个card */
+    .img:nth-of-type(4),
+    .img:nth-of-type(5) {
+        display: none;
+    }
+}
