@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(153, 163, 152);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.triangle {
+    position: relative;
+    height: 80px;
+    width: 80px;
+}
+
+.triangle::after,
+.triangle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 60px solid transparent;
+    /* transparent透明 */
+    border-bottom-color: aliceblue;
+    /* 内容大小0，底部边框给颜色，三角形的形状 */
+    animation: rotate1 4s linear infinite 1s;
+}
+
+.triangle::before {
+    transform: rotate(90deg);
+    animation: rotate2 4s linear infinite;
+}
+
+@keyframes rotate1 {
+
+    0%,
+    25% {
+        transform: rotate(0deg);
+    }
+
+    50%,
+    75% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate2 {
+
+    0%,
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50%,
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(450deg);
+    }
+}
