@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #aecbfa 100%);
+    /* 背景颜色渐变 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+h2 {
+    position: absolute;
+    top: 15px;
+}
+
+.container {
+    position: relative;
+}
+
+input[type='range'] {
+    width: 360px;
+    -webkit-appearance: none;
+    /* 改变滑块样式 */
+}
+
+input[type='range']:focus {
+    outline: none;
+}
+
+input[type='range'] + label {
+    background-color: aliceblue;
+    position: absolute;
+    top: -30px;
+    left: 150px;
+    width: 60px;
+    text-align: center;
+    padding: 2px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgb(90, 90, 90);
+}
+
+
+/* 下面都是兼容性写方 */
+/* Chrome & Safari */
+input[type='range']::-webkit-slider-runnable-track {
+    background: rgb(0, 121, 242);
+    border-radius: 4px;
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 121, 242);
+    margin-top: -7px;
+    cursor: pointer;
+}
+
+/* Firefox */
+input[type='range']::-moz-range-track {
+    background: rgb(0, 121, 242);
+    border-radius: 4px;
+    width: 100%;
+    height: 13px;
+    cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 121, 242);
+    margin-top: -7px;
+    cursor: pointer;
+}
+
+/* IE */
+input[type='range']::-ms-track {
+    background: rgb(0, 121, 242);
+    border-radius: 4px;
+    width: 100%;
+    height: 13px;
+    cursor: pointer;
+}
+
+input[type='range']::-ms-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 121, 242);
+    margin-top: -7px;
+    cursor: pointer;
+}
