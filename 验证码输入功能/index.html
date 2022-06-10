@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>验证码输入功能</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>输入验证码</h2>
+        <p>我们通过电子邮件向您发送了六位数代码<br />
+            输入以下代码以确认您的电子邮件地址</p>
+        <div class="code-con">
+            <input type="number" class="code" placeholder="0" min="0" max="9" required>
+            <input type="number" class="code" placeholder="0" min="0" max="9" required>
+            <input type="number" class="code" placeholder="0" min="0" max="9" required>
+            <input type="number" class="code" placeholder="0" min="0" max="9" required>
+            <input type="number" class="code" placeholder="0" min="0" max="9" required>
+            <input type="number" class="code" placeholder="0" min="0" max="9" required>
+        </div>
+        <small class="info">
+            这只是功能样子，没有发电子邮件。
+        </small>
+    </div>
+</body>
+<script src="./script.js"></script>
+
+</html>

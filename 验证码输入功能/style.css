@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    background-color: aliceblue;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 36px;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.code-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 36px;
+}
+
+.code {
+    caret-color: transparent;
+    /* 插入光标（caret）的颜色透明 */
+    border-radius: 6px;
+    font-size: 60px;
+    height: 120px;
+    width: 100px;
+    border: 1px solid aliceblue;
+    margin: 2%;
+    text-align: center;
+    font-weight: 600;
+    /* 字体加粗 */
+}
+
+.code::-webkit-outer-spin-button,
+.code::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* 去除默认的加减 */
+
+.code:valid {
+    border-color: rgb(111, 184, 253);
+    box-shadow: 0 10px 10px -6px black;
+}
+
+/* 输入符合输入的时候显示的样式 */
+
+.info {
+    background-color: aliceblue;
+    display: inline-block;
+    padding: 12px;
+    line-height: 20px;
+    max-width: 420px;
+    color: darkgray;
+    border-radius: 5px;
+}
+
+@media (max-width: 620px) {
+    .code-con {
+        flex-wrap: wrap;
+    }
+
+    .code {
+        font-size: 10px;
+        height: 25px;
+        max-width: 20px;
+    }
+}
