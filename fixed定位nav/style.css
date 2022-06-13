@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: black;
+    padding-bottom: 60px;
+    font-family: 'Open Sans', sans-serif;
+    /* 不使用这个字体的话，hover  font-weight: bold;会使nav内容出现一些不正常的东西*/
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav {
+    position: fixed;
+    background-color: black;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav a {
+    color: aliceblue;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: all 0.5s ease-in-out;
+    letter-spacing: 1px;
+}
+
+.nav.active {
+    background-color: aliceblue;
+    box-shadow: 0 3px 12px black;
+}
+
+.nav.active a {
+    color: black;
+}
+
+.nav.active .container {
+    padding: 10px 0;
+}
+
+.nav a.current,
+.nav a:hover {
+    color: rgb(1, 136, 255);
+    font-weight: bold;
+}
+
+.hero {
+    background-image: url('https://img0.baidu.com/it/u=3444837410,381255388&fm=253&fmt=auto&app=138&f=JPEG?w=820&h=461');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+    z-index: -3;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: -2;
+}
+
+.hero h1 {
+    font-size: 42px;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.content h2,
+.content h3 {
+    font-size: 160%;
+    margin: 22px 0;
+}
+
+.content p {
+    color: darkgray;
+    line-height: 30px;
+    letter-spacing: 2px;
+}
