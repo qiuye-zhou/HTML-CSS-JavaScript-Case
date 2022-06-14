@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 10px;
+}
+
+.testimonial-container {
+    background-color: rgb(121, 184, 255);
+    color: aliceblue;
+    border-radius: 16px;
+    margin: 20px auto;
+    padding: 52px 80px;
+    max-width: 770px;
+    position: relative;
+}
+
+.fa-quote {
+    color: darkgray;
+    font-size: 30px;
+    position: absolute;
+    top: 70px;
+}
+
+.fa-quote-left {
+    left: 42px;
+}
+
+.fa-quote-right {
+    right: 42px;
+}
+
+.testimonial {
+    line-height: 28px;
+    text-align: justify;
+    letter-spacing: 1px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.user .user-image {
+    border-radius: 50%;
+    height: 76px;
+    width: 76px;
+    object-fit: cover;
+    /* 被替换的内容在保持其宽高比的同时填充元素的整个内容框。如果对象的宽高比与内容框不相匹配，该对象将被剪裁以适应内容框。 */
+}
+
+.user .user-details {
+    margin-left: 12px;
+}
+
+.user .username {
+    margin: 0;
+}
+
+.user .role {
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    background-color: aliceblue;
+    height: 5px;
+    width: 100%;
+    animation: gr 10s linear infinite;
+    transform-origin: left;
+    /* 过度从右边开始 */
+}
+
+@keyframes gr {
+    0%{
+        transform: scaleX(0);
+    }
+}
+
+@media (max-width: 770px) {
+    .testimonial-container{
+        padding: 20px 30px;
+    }
+    .fa-quote {
+        display: none;
+    }
+}
