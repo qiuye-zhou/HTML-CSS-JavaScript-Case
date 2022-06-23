@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.key {
+  border: solid 1px rgb(54, 54, 54);
+  background-color: aliceblue;
+  box-shadow: 1px 1px 3px black;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 18px;
+  flex-direction: column;
+  margin: 12px;
+  min-width: 150px;
+  position: relative;
+}
+
+.key small {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  color: darkgray;
+  font-size: 15px;
+}
+
+@media(max-width: 768px) {
+  .key {
+    margin: 10px 0;
+  }
+}
