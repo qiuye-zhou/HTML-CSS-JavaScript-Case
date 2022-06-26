@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+h3 {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+small {
+  display: block;
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+.fa-heart {
+  color: red;
+}
+
+.con {
+  height: 450px;
+  width: 320px;
+  background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F81de18088513fb91e02183345400d22bf4864cc6.jpg&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1658806773&t=752a2e4150d7a66d67ee99b0246fdf8a');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+  cursor: pointer;
+  max-width: 100%;
+  position: relative;
+  box-shadow: 0 15px 26px black;
+  overflow: hidden;
+}
+
+.con .fa-heart {
+  position: absolute;
+  animation: cli 0.8s linear;
+  transform: translate(-50%,-50%) scale(0);
+}
+
+@keyframes cli {
+  to {
+    transform: translate(-50%,-50%) scale(10);
+    opacity: 0;
+  }
+}
