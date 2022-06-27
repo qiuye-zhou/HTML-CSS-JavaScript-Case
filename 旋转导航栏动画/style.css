@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: darkgray;
+  color: rgb(88, 88, 88);
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.container {
+  background-color: aliceblue;
+  transform-origin: top left;
+  /* 动画效果以左顶点过渡 */
+  transition: transform 0.6s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 52px;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.circle {
+  background-color: rgb(91, 173, 255);
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.6s linear;
+}
+
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  /* 背景透明 */
+  border: 0;
+  font-size: 22px;
+  color: aliceblue;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 10;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  /* 内容都变大写 */
+  color: aliceblue;
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in;
+}
+
+nav ul li i {
+  font-size: 22px;
+  margin-right: 10px;
+}
+/* 第一个li的位置 */
+
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+/* 紧接着第一个li的下一个li的位置 */
+
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+
+nav a {
+  color: aliceblue;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+nav a:hover {
+  color: #FF7979;
+  font-weight: bold;
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.content h1 {
+  margin: 0;
+}
+
+.content small {
+  color: #555;
+  font-style: italic;
+}
+
+.content p {
+  color: #333;
+  line-height: 1.5;
+}
