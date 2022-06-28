@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: aliceblue;
+}
+
+h1 {
+  margin: 50px 0 30px;
+  text-align: center;
+}
+
+.faq-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq {
+  background-color: transparent;
+  /* 背景透明 */
+  border: solid 1px darkgray;
+  border-radius: 12px;
+  margin: 20px 0;
+  padding: 26px;
+  position: relative;
+  overflow: hidden;
+  transition:  all 0.3s ease;
+}
+
+.faq.active {
+  background-color: rgb(179, 219, 255);
+  box-shadow:  0 2px 6px black;
+           /* 水平  垂直  模糊 */
+}
+
+.faq.active::before,
+.faq.active::after {
+  content: '\f075';
+  font-family: 'Font Awesome 5 Free';
+  /* 引入的图标  使用必须引入 */
+  color: rgb(0, 110, 255);
+  font-size: 6rem;
+  position: absolute;
+  opacity: 0.2;
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+}
+
+.faq.active::before {
+  color: rgb(255, 255, 255);
+  top: -5px;
+  left: -30px;
+  transform: rotateY(180deg);
+}
+
+.faq-title {
+  margin: 0 35px 0 0;
+}
+
+.faq-text {
+  display: none;
+  /* 隐藏 */
+  margin: 30px 0;
+}
+
+.faq.active .faq-text {
+  display: block;
+  /* active状态则显示 */
+}
+
+.faq-toggle {
+  /* button样式 */
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.faq-toggle:focus {
+  outline: 0;
+}
+
+.faq-toggle .fa-times {
+  display: none;
+  /* X 隐藏 */
+}
+
+.faq.active .faq-toggle .fa-times {
+  /* active状态 X 显示 */
+  color: aliceblue;
+  display: block;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+  /* active状态 V 隐藏 */
+  display: none;
+}
+
+.faq.active .faq-toggle {
+  background-color: rgb(185, 222, 255);
+}
